@@ -45,6 +45,35 @@ class Song:
     playlist_only = None (Bool)
     apple_music = None (Bool)
     protected = None (Bool)
+    purchased = None (Bool)
+    play_epoch = None (Integer)
+    track_type = None (String)
+    file_folder_count = None (Integer)
+    library_folder_count = None (Integer)
+    release_date = None (Time)
+    normalization = None (Integer)
+    artwork_count = None (Integer)
+    has_video = None (Bool)
+    hd = None (Bool)
+    video_width = None (Integer)
+    video_height = None (Integer)
+    music_video = None (Bool)
+    bpm = None (Integer)
+    sort_artist = None (String)
+    sort_album = None (String)
+    sort_name = None (String)
+    explicit = None (Bool)
+    movie = None (Bool)
+    series = None (String)
+    season = None (Integer)
+    episode = None (String)
+    episode_order = None (Integer)
+    content_rating = None (String)
+    tv_show = None (Bool)
+    podcast = None (Bool)
+    unplayed = None (Bool)
+    clean = None (Bool)
+    loved = None (Bool)
     """
     name = None
     track_id = None
@@ -87,6 +116,38 @@ class Song:
     playlist_only = None
     apple_music = None
     protected = None
+    purchased = None
+    play_epoch = None
+    track_type = None
+    file_folder_count = None
+    library_folder_count = None
+    release_date = None
+    normalization = None
+    artwork_count = None
+    has_video = None
+    hd = None
+    video_width = None
+    video_height = None
+    music_video = None
+    bpm = None
+    sort_artist = None
+    sort_album = None
+    sort_name = None
+    explicit = None
+    movie = None
+    series = None
+    season = None
+    episode = None
+    episode_order = None
+    content_rating = None
+    tv_show = None
+    podcast = None
+    unplayed = None
+    sort_album_artist = None
+    sort_composer = None
+    clean = None
+    loved = None
+
 
     def __iter__(self):
         for attr, value in iteritems(self.__dict__):

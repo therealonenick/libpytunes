@@ -67,6 +67,7 @@ class Library:
             s.album_rating = attributes.get('Album Rating')
             s.album_rating_computed = 'Album Rating Computed' in attributes
             s.persistent_id = attributes.get('Persistent ID')
+            #s.purchased = attributes.get('Purchased') if attributes.get('Purchased') else None
 
             if attributes.get('Location'):
                 s.location_escaped = attributes.get('Location')
@@ -91,6 +92,33 @@ class Library:
             s.playlist_only = 'Playlist Only' in attributes
             s.apple_music = 'Apple Music' in attributes
             s.protected = 'Protected' in attributes
+            s.purchased = 'Purchased' in attributes
+            s.play_epoch = int(attributes.get('Play Date')) if attributes.get('Play Date') else None
+            s.file_folder_count = int(attributes.get('File Folder Count')) if attributes.get('File Folder Count') else None
+            s.library_folder_count = int(attributes.get('Library Folder Count')) if attributes.get('Library Folder Count') else None
+            s.normalization = int(attributes.get('Normalization')) if attributes.get('Normalization') else None
+            s.release_date = time.strptime(str(attributes.get('Release Date')), format) if attributes.get('Release Date') else None
+            s.artwork_count = int(attributes.get('Artwork Count')) if attributes.get('Artwork Count') else None
+            s.hd = bool(attributes.get('HD')) if 'Has Video' in attributes else None
+            s.video_width = int(attributes.get('Video Width')) if attributes.get('Video Width') else None
+            s.video_height = int(attributes.get('Video Height')) if attributes.get('Video Height') else None
+            s.music_video = 'Music Video' in attributes
+            s.bpm = int(attributes.get('BPM')) if attributes.get('BPM') else None
+            s.sort_artist = attributes.get('Sort Artist')
+            s.sort_album = attributes.get('Sort Album')
+            s.sort_album_artist = attributes.get('Sort Album Artist')
+            s.sort_composer = attributes.get('Sort Composer')
+            s.sort_name = attributes.get('Sort Name')
+            s.explicit = 'Explicit' in attributes
+            s.series = attributes.get('Series')
+            s.season = attributes.get('Season')
+            s.episode = attributes.get('Episode')
+            s.episode_order = int(attributes.get('Episode Order')) if attributes.get('Episode Order') else None
+            s.content_rating = attributes.get('Content Rating')
+            s.tv_show = 'TV Show' in attributes
+            s.podcast = 'Podcast' in attributes
+            s.unplayed = 'Unplayed' in attributes
+            s.clean = 'Clean' in attributes
 
             self.songs[int(trackid)] = s
 
